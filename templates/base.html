@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Шахматная доска</title>
+
+    <!-- Подключение стилей для доски (не обязательно, если внешний вид устраивает) -->
+    <!-- Если у вас есть chessboard.css, раскомментируйте строку ниже -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/chessboard.css') }}"> -->
+
+    <!-- Подключение скриптов -->
+    <script src="{{ url_for('static', filename='js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chessboard-1.0.0.min.js') }}"></script>
+</head>
+<body>
+<!-- Контейнер для шахматной доски -->
+<div id="board" style="width: 400px; margin: 50px auto;"></div>
+
+<script>
+    var board = chessboard('board', {
+        position: 'start',
+        pieceTheme: '/static/img/chesspieces/wikipedia/{piece}.png'
+    });
+</script>
+</body>
+</html>
