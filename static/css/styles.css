@@ -6,3 +6,65 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     outline: none;
 }
+:root {
+    --bg-color: #1A1A1A;
+    --accent-green: #7F9C83;
+    --chess-white: #D8CAB8;
+    --chess-black: #1F1F1F;
+    --text-primary: #F5F5F5;
+    --secondary: #000;
+    --header-color: #32773F;
+}
+a {
+    text-decoration: none;
+}
+header {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    transition: 0.5s ease-in-out;
+    background: var(--header-color);
+}
+header:hover {
+    border-bottom: 1px solid var(--secondary);
+}
+nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-link {
+    color: var(--text-primary);
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    position: relative;
+}
+.nav-link:hover {
+    color: var(--accent-green);
+}
+/*
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    border-radius: 10%;
+    background-color: var(--text-primary);
+    transition: width 0.3s ease-in-out;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+ */
+header h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
