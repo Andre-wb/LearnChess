@@ -1,18 +1,20 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
+import telebot
+from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
+from dotenv import load_dotenv
+import os
+from app.routes import main
 
+load_dotenv()
+#flask конфигурация
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+app = Flask(__name__)
+app.register_blueprint(main)
 
-@app.route('/')
-def base():
-    return render_template('base.html')
-
-@app.route('/main')
-def main_page():
-    return render_template('main.html')
-
-@app.route('/stats')
-def stats_page():
-    return render_template('stats.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

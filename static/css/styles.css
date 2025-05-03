@@ -6,44 +6,53 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     outline: none;
 }
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
 :root {
-    --bg-color: #1A1A1A;
-    --accent-green: #7F9C83;
-    --chess-white: #D8CAB8;
-    --chess-black: #1F1F1F;
-    --text-primary: #F5F5F5;
-    --secondary: #000;
-    --header-color: #32773F;
+    --bg-color: #23251f;
+    --text-color: #c6ccc6;
+    --accent: #7dae54;
 }
 a {
     text-decoration: none;
 }
-header {
-    width: 100vw;
+.bottom-nav {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    height: 68px;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 15px;
-    border-bottom: 1px solid transparent;
-    transition: 0.5s ease-in-out;
-    background: var(--header-color);
+    border-radius: 20px;
+    z-index: 3;
 }
-header:hover {
-    border-bottom: 1px solid var(--secondary);
-}
-nav {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+
 .nav-link {
-    color: var(--text-primary);
-    transition: 0.3s ease-in-out;
+    color: #3a3c3a;
     font-weight: 600;
-    position: relative;
-}
-.nav-link:hover {
-    color: var(--accent-green);
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    i {
+        font-size: 20px;
+        margin-bottom: 2px;
+    }
+
+    &:active {
+        color: #b0b3b0;
+    }
 }
 /*
 
@@ -62,9 +71,3 @@ nav {
     width: 100%;
 }
  */
-header h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}

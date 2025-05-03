@@ -5,27 +5,26 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Document</title>
 </head>
 <body>
-<header>
-    <h1>
-        LearnChess
-        <svg width="30" height="40" viewBox="0 0 243 322" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 289C0 272.431 13.4315 259 30 259H213C229.569 259 243 272.431 243 289V292C243 308.569 229.569 322 213 322H30C13.4315 322 0 308.569 0 292V289Z" fill="black"/>
-            <path d="M92.5088 133.95C100.416 104.235 142.584 104.235 150.491 133.95L182.911 255.786C187.978 274.827 173.625 293.5 153.92 293.5H89.0798C69.3754 293.5 55.0217 274.827 60.0886 255.786L92.5088 133.95Z" fill="black"/>
-            <path d="M57 110C57 100.059 65.0589 92 75 92H168C177.941 92 186 100.059 186 110C186 119.941 177.941 128 168 128H75C65.0589 128 57 119.941 57 110Z" fill="black"/>
-            <path d="M176 55C176 85.3757 151.376 110 121 110C90.6243 110 66 85.3757 66 55C66 24.6243 90.6243 0 121 0C151.376 0 176 24.6243 176 55Z" fill="black"/>
-        </svg>
-    </h1>
-    <nav>
-        <a href="/main" class="nav-link">Главная</a>
-        <a href="/stats" class="nav-link">Рейтинг</a>
-    </nav>
-</header>
 <main>
     {% block content %}{% endblock %}
 </main>
+<nav class="bottom-nav">
+    <a href="/main" class="nav-link">
+        <i class="icon-home"></i>
+        <span>Главная</span>
+    </a>
+    <a href="/play" class="nav-link">
+        <i class="icon-chess"></i>
+        <span>Играть</span>
+    </a>
+    <a href="/account" class="nav-link">
+        <i class="icon-profile"></i>
+        <span>Аккаунт</span>
+    </a>
+</nav>
 </body>
 </html>
