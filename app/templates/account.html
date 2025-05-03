@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Профиль пользователя</h1>
+
+<p>Имя: {{ user.name if user else 'Пользователь не найден' }}</p>
+<p>Telegram ID: {{ user.telegram_id if user else '—' }}</p>
+{% endblock %}
