@@ -6,37 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/init.js') }}"></script>
     <title>Document</title>
 </head>
-<script>
-    window.onload = async function () {
-        const tg = window.Telegram.WebApp;
-        tg.ready();
-
-        const user = tg.initDataUnsafe.user;
-        if (!user) return;
-
-        const response = await fetch("/api/telegram-login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                telegram_id: user.id,
-                first_name: user.first_name,
-                last_name: user.last_name,
-                username: user.username,
-                avatar_url: user.photo_url // может быть undefined
-            })
-        });
-
-        const data = await response.json();
-        if (data.status === "ok") {
-            console.log("Пользователь подставлен в аккаунт:", data.user);
-            // здесь можешь обновить интерфейс, подставив имя/аватар и т.п.
-        }
-    }
-</script>
 <body>
 <main>
     {% block content %}{% endblock %}
